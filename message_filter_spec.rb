@@ -1,13 +1,14 @@
 require_relative 'message_filter'
 
-describe MessageFilter do
+describe MessageFilter,"with argument 'foo'" do
   before do
     @filter = MessageFilter.new('foo')
   end
+  subject {@filter}
   it "NGワードの検査" do
-    expect(@filter).to be_detect('hello from foo')
+    is_expected.to be_detect('hello from foo')
   end
   it "NGワードがなかったら検査しない" do
-    expect(@filter).to be_detect('hello from fao')
+    is_expected.to be_detect('hello from fao')
   end
 end
