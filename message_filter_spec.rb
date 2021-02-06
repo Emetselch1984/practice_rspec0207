@@ -21,6 +21,9 @@ describe MessageFilter do
   context "with argument 'foo'" do
     let(:filter){ MessageFilter.new('foo') }
     subject {filter}
+    it "引数が空である" do
+      expect(subject.ng_words).not_to be_empty
+    end
     it_behaves_like "MessageFilter with argument 'foo'"
   end
   context "with argument 'foo bar'" do
