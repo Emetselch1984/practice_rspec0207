@@ -5,9 +5,9 @@ describe MessageFilter do
     @filter = MessageFilter.new('foo')
   end
   it "NGワードの検査" do
-    expect(@filter.detect?('hello from foo')).to be_truthy
+    expect(@filter).to be_detect('hello from foo')
   end
   it "NGワードがなかったら検査しない" do
-    expect(@filter.detect?('hello from fao')).to be_falsey
+    expect(@filter).to be_detect('hello from fao')
   end
 end
