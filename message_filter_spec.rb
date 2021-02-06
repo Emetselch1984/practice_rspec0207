@@ -8,5 +8,6 @@ describe MessageFilter do
   it "NGワードがなかったら検査しない" do
     filter = MessageFilter.new('foo')
     expect(filter.detect?('hello from fao')).to be_falsey
+    foo
   end
 end
