@@ -17,15 +17,15 @@ shared_examples "MessageFilter with argument 'foo','bar'" do
   end
 end
 
-describe MessageFilter,"with argument 'foo'" do
-
-  let(:filter){ MessageFilter.new('foo') }
-  subject {filter}
-  it_behaves_like "MessageFilter with argument 'foo'"
-end
-describe MessageFilter,"with argument 'foo bar'" do
-
-  let(:filter){ MessageFilter.new('foo','bar') }
-  subject {filter}
-  it_behaves_like "MessageFilter with argument 'foo','bar'"
+describe MessageFilter do
+  context "with argument 'foo'" do
+    let(:filter){ MessageFilter.new('foo') }
+    subject {filter}
+    it_behaves_like "MessageFilter with argument 'foo'"
+  end
+  context "with argument 'foo bar'" do
+    let(:filter){ MessageFilter.new('foo','bar') }
+    subject {filter}
+    it_behaves_like "MessageFilter with argument 'foo','bar'"
+  end
 end
